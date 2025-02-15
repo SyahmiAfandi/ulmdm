@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MDM Tools Web Apps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/fc55130c50.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .center-image {
+          display: block;
+          margin: 0 auto; 
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>  
+  </head>
+  
+  <body>
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none;z-index:5;" id="leftMenu">
+      <br>
+      <img src="Images/Main/logo.png" alt="Logo" style="max-width: 100%;" class="w3-animate-zoom">
+      <hr>
+      <p style="text-align:center;"><small>Version 3.0</small></p>
+      <hr>
+      <a href="#" class="w3-bar-item w3-button w3-light-grey w3-animate-left"><i class="fa fa-home"></i> Home</a>
+      <button class="w3-button w3-block w3-left-align w3-animate-left" onclick="myAccFunc()"> <i class="fa-solid fa-screwdriver-wrench"></i> Tools <i class="fa fa-caret-down"></i>
+      </button>
+      <div id="demoAcc" class="w3-hide w3-white w3-card">
+        <a href="tools-recons.htm" class="w3-bar-item w3-button w3-animate-left"><i class="fa fa-chevron-right"></i> Reconciliation Tools</a>
+        <a href="#" class="w3-bar-item w3-button w3-animate-left"><i class="fa fa-chevron-right"></i> Promotion Tools</a>
+      </div>
+      <button class="w3-button w3-block w3-left-align w3-animate-left" onclick="myAccFunc1()"> <i class="fa-solid fa-gears"></i> Utilities <i class="fa fa-caret-down"></i>
+      </button>
+      <div id="demoAcc1" class="w3-hide w3-white w3-card">
+        <a href="#" class="w3-bar-item w3-button w3-animate-left"><i class="fa fa-chevron-right"></i> PBI Dashboard</a>
+      </div>
+      <a href="#" class="w3-bar-item w3-button w3-animate-left"><i class="fa-solid fa-user-gear"></i> Settings</a>
+        <button style="position:absolute;bottom:0;" onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-card w3-animate-left">Close &times;
+        </button>
+    </div>
+
+    
+
+    <!-- Overlay -->
+    <div class="w3-overlay" onclick="closeLeftMenu()" style="cursor:pointer" id="myOverlay"></div>
+
+    <!-- Page content -->
+    <div id="main">
+      <div class="w3-container w3-light-blue w3-card">
+        <button id="openNav" class="w3-button w3-light-blue w3-xlarge w3-left" onclick="openLeftMenu()"> &#9776;</button>
+      </div>
+    
+
+      <div class="w3-container">
+        <h3><b>Dashboard</b></h3><hr>
+      </div>
+
+      <div class="w3-container">
+        <img src="Images/Main/Main Dashboard.jpg" alt="Main" style="max-width: 20%;" class="w3-image center-image">
+      </div>
+
+      <div class="w3-container w3-tiny">
+        <hr>
+        <p> Welcome Syahmi Afandi!<br> </p>
+        <p> Check In Recorded<br></p>
+        <hr>
+      </div>
+      
+      <div class="w3-container">
+        <img src="Images/Main/Features.jpg" alt="Features" style="max-width:1.95%;">
+        <img src="Images/Main/F1.jpg" alt="Features1" style="max-width:25%;" class="w3-animate-zoom">
+        <img src="Images/Main/F3.jpg" alt="Features3" style="max-width:25%;" class="w3-animate-zoom">
+      </div>
+    </div>
+
+
+    
+  </body>
+
+
+
+  <script>
+    function myAccFunc() {
+      var x = document.getElementById("demoAcc");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-blue";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace(" w3-blue", "");
+      }
+    }
+  
+    function myAccFunc1() {
+      var x = document.getElementById("demoAcc1");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-blue";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace(" w3-blue", "");
+      }
+    }
+  
+    function openLeftMenu() {
+      document.getElementById("main").style.marginLeft = "16%";
+      document.getElementById("leftMenu").style.width = "16%";
+      document.getElementById("leftMenu").style.display = "block";
+      document.getElementById("openNav").style.display = 'none';
+      document.getElementById("myOverlay").style.display = "block";
+    }
+  
+    function closeLeftMenu() {
+      document.getElementById("main").style.marginLeft = "0%";
+      document.getElementById("leftMenu").style.display = "none";
+      document.getElementById("openNav").style.display = "inline-block";
+      document.getElementById("myOverlay").style.display = "none";
+    }
+
+    
+  
+  </script>
+</html>
